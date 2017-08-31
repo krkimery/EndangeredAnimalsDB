@@ -1,0 +1,7 @@
+####	import_Continent.txt	###
+
+Runtime:	0.7 seconds
+Rows added:	114
+
+"Unfixable" Errors:
+	-added column in csv file for migratory_status rather than accessing another file

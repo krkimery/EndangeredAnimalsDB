@@ -1,0 +1,11 @@
+####	import_Endangered_Animal.txt	###
+
+Runtime:	0.8 seconds
+Rows added:	460
+
+"Unfixable" Errors:
+	-In two cases we encountered duplicate "Scientific Names", which is our primary key. These were
+	the result of duplicate entries in the data. Having non-unique primary keys caused Integrity errors.
+	The 2 duplicate rows were removed:
+		-Common Name: "Barbary Deer"
+		-Common Name: "Leopard"				*Note: I'm giving common names here, because they're easy

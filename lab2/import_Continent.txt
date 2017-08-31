@@ -1,0 +1,7 @@
+####	import_Continent.txt	###
+
+Runtime:	0.3 seconds
+Rows added: 5
+
+"Unfixable" Errors:
+	-None, had lots of issues with leading/trailing spaces in continent names, resolved. 

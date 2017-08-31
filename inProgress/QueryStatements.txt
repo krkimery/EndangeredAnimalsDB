@@ -1,0 +1,110 @@
+GROUP BY 1 ---
+
+USE Endangered;
+SELECTScientific_name 
+FROM Animal_Range 
+GROUP BY Animal_Range.scientific_name
+HAVING Scientific_name like "%a";
+
+AGGREGATE 1, GROUP BY 2 ---
+
+USE Endangered;
+SELECT COUNT(*) NumBirds
+FROM Bird
+GROUP BY Migratory_status
+HAVING Migratory_status = "Y";
+
+INNER JOIN 1, ORDER BY 1 ---
+
+USE Endangered;
+SELECT Endangered_Animal.common_name, Animal_Range.continent_name
+FROM Endangered_Animal
+INNER JOIN Animal_Range
+ON Endangered_Animal.scientific_name = Animal_Range.scientific_name
+ORDER BY Endangered_Animal.common_name;
+
+INNER JOIN 2, WHERE 1, ORDER BY 2 ---
+
+USE Endangered;
+SELECT Endangered_Animal.common_name, Bird.migratory_status
+FROM Endangered_Animal
+INNER JOIN Bird
+ON Endangered_Animal.scientific_name = Bird.scientific_name
+WHERE Bird.migratory_status = "Y";
+ORDER BY Endangered_Animal.common_name
+
+INNER JOIN 3, WHERE 2, ORDER BY 3 --- 
+
+USE Endangered;
+SELECT Endangered_Animal.common_name, Animal_Range.continent_name
+FROM Endangered_Animal
+INNER JOIN Animal_Range
+ON Endangered_Animal.scientific_name = Animal_Range.scientific_name
+WHERE Endangered_Animal.animal_type = "M"
+ORDER BY Animal_Range.continent_name;
+
+OUTER JOIN 1, ORDER BY 4 ---
+
+USE Endangered;
+SELECT Endangered_Animal.common_name, Bird.migratory_status
+FROM Endangered_Animal
+LEFT JOIN Bird
+ON Endangered_Animal.scientific_name = Bird.scientific_name
+ORDER BY Endangered_Animal.animal_type;
+
+OUTER JOIN 2, ORDER BY 5 ---
+
+USE Endangered;
+SELECT Endangered_Animal.endangered_status, Animal_Range.continent_name
+FROM Endangered_Animal
+LEFT JOIN Animal_Range
+ON Endangered_Animal.scientific_name = Animal_Range.scientific_name
+ORDER BY Endangered_Animal.endangered_status;
+
+AGGREGATE 2, WHERE 3 ---
+
+USE Endangered;
+SELECT COUNT(*) NumEnd
+FROM Endangered_Animal
+WHERE endangered_status = "E";
+
+DISTINCT, WHERE 4 ---
+
+USE Endangered;
+SELECT DISTINCT continent_name
+FROM Continent
+WHERE continent_name like "a%";
+
+WHERE 5 ---
+
+USE Endangered;
+SELECT common_name
+FROM Endangered_Animal
+WHERE common_name like "%bear%";
+
+~~~~~~~~~ VIEWS ~~~~~~~~~
+
+USE Endangered;
+CREATE VIEW AnimalNames AS
+SELECT scientific_name
+FROM Animal_Range;
+
+USE Endangered;
+CREATE VIEW BirdNames AS
+SELECT scientific_name
+FROM Bird;
+
+SELECT * FROM AnimalNames
+WHERE scientific_name like "%myotis%";
+
+SELECT * FROM BirdNames
+WHERE common_name like "red%";
+
+SELECT * FROM AnimalNames
+WHERE scientific_name = "%Equus%";
+
+SELECT * FROM AnimalNames
+WHERE scientific_name like "%Prionailurus%";
+
+SELECT * FROM BirdNames
+WHERE common_name = "Eagle";

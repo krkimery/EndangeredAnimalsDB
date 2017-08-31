@@ -1,0 +1,35 @@
+def findDrop(input):
+	x = input
+    y = "; drop table"
+
+    if y in x:
+  		return True
+    else:
+  		return False
+
+def findTruncate(input):
+	x = input
+	y = "; truncate table"
+
+	if y in x:
+		return True
+	else:
+		return False
+
+def findDelete(input):
+	x = input
+	y = "; delete from"
+
+	if y in x:
+		return True
+	else:
+		return False
+
+def findOneEq(input):
+	x = input
+	y = "or 1=1"
+
+	if y in x:
+		return True
+	else:
+		return False

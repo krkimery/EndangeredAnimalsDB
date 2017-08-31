@@ -1,0 +1,34 @@
+﻿
+
+US Fish and Wildlife Service – List of Endangered Species of Mammals and Birds
+
+http://www.downloadexcelfiles.com/wo_en/download-excel-file-list-list-endangered-species-mammals-and-birds#.V-gDISgrKhc
+
+csv
+
+This dataset contains information regarding endangered birds and mammals. Of particular interest in this dataset is the geographic “Home Region” of various endangered species, as well as the type of animal (Mammal vs Bird). We plan to model these attributes and their relationships. 
+
+Some anomalies in this data include the format of the endangered status. For the vast majority of the data, the information is present as a single character: either “E” or “T”. However, certain entries contain the additional text (S/A) meaning that the animal is similar in appearance to another endangered animal. This additional information is not useful for our purposes and will have to be ignored when entering data. 
+
+Additionally, although the information includes its own numbering system (“SN.o”), these ID numbers are not unique. Mammals and Birds share the same numbers, so a give number may refer to 2 animals. Thus, we will have to determine our own solution for uniquely identifying entries in our database. 
+
+We will encounter challenges in handling many-to-many relationships between home range and the endangered animals, and in the vast differences in the scale of the home range. Some of the ranges are as specific as counties in US states, while others are as vague as entire continents. 
+
+
+
+
+
+The IUCN Red List of Threatened Species
+
+http://www.iucnredlist.org/technical-documents/spatial-data
+
+xml
+
+
+This resource provides information about the migratory habits of endangered birds, an attribute which we intend to model alongside our data from the other database, illustrating a relationship between endangered/threatened animals and migration patterns. 
+
+Unfortunately this dataset does not contain all of the information we need, we are also searching for information regarding the running speed of endangered mammals. Thus far we have been unable to locate reliable data for this attribute, although we will continue to search for it. 
+
+
+
+

@@ -1,0 +1,7 @@
+### import_Animal_Range.txt ###
+
+runtime: 1.2 seconds
+files added: 500
+
+"Unfixable" errors:
+-none

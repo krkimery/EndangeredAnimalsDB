@@ -1,0 +1,169 @@
+def query11():
+
+    is_success = True
+    view = "USE Endangered; CREATE VIEW AnimalNames AS SELECT scientific_name FROM Animal_Range;"
+    query = "SELECT * FROM AnimalNames WHERE scientific_name like "%myotis%";"
+ 
+    try: 
+        connection = create_connection()
+        cursor = connection.cursor()
+
+        query_status = True
+        try: 
+            cursor.execute(view)
+            cursor.execute(query)
+        except:
+            query_status = False
+
+        if query_status:
+            is_success = True
+        else:
+            is_success = False
+
+        results = cursor.fetchall()
+        print ""    
+        for row in results:
+            print row
+        print "" 
+
+    except pymysql.Error as e:
+        is_success = False
+        print "Query failed: " + e.strerror
+
+    return is_success
+
+def query12():
+
+    is_success = True
+    view = "USE Endangered; CREATE VIEW AnimalNames AS SELECT scientific_name FROM Animal_Range;"
+    query = "SELECT * FROM AnimalNames WHERE scientific_name = "%Equus%";"
+ 
+    try: 
+        connection = create_connection()
+        cursor = connection.cursor()
+
+        query_status = True
+        try: 
+            cursor.execute(view)
+            cursor.execute(query)
+        except:
+            query_status = False
+
+        if query_status:
+            is_success = True
+        else:
+            is_success = False
+
+        results = cursor.fetchall()
+        print ""    
+        for row in results:
+            print row
+        print "" 
+
+    except pymysql.Error as e:
+        is_success = False
+        print "Query failed: " + e.strerror
+
+    return is_success
+
+def query13():
+
+    is_success = True
+    view = "USE Endangered; CREATE VIEW AnimalNames AS SELECT scientific_name FROM Animal_Range;"
+    query = "SELECT * FROM AnimalNames WHERE scientific_name like "%Prionailurus%";"
+ 
+    try: 
+        connection = create_connection()
+        cursor = connection.cursor()
+
+        query_status = True
+        try: 
+            cursor.execute(view)
+            cursor.execute(query)
+        except:
+            query_status = False
+
+        if query_status:
+            is_success = True
+        else:
+            is_success = False
+
+        results = cursor.fetchall()
+        print ""    
+        for row in results:
+            print row
+        print "" 
+
+    except pymysql.Error as e:
+        is_success = False
+        print "Query failed: " + e.strerror
+
+    return is_success
+
+def query14():
+
+    is_success = True
+    view = "USE Endangered; CREATE VIEW BirdNames AS SELECT scientific_name FROM Bird;""
+    query = "SELECT * FROM BirdNames WHERE common_name like "red%";"
+ 
+    try: 
+        connection = create_connection()
+        cursor = connection.cursor()
+
+        query_status = True
+        try: 
+            cursor.execute(view)
+            cursor.execute(query)
+        except:
+            query_status = False
+
+        if query_status:
+            is_success = True
+        else:
+            is_success = False
+
+        results = cursor.fetchall()
+        print ""    
+        for row in results:
+            print row
+        print "" 
+
+    except pymysql.Error as e:
+        is_success = False
+        print "Query failed: " + e.strerror
+
+    return is_success
+
+def query15():
+
+    is_success = True
+    view = "USE Endangered; CREATE VIEW BirdNames AS SELECT scientific_name FROM Bird;""
+    query = "SELECT * FROM BirdNames WHERE common_name = "Eagle";"
+ 
+    try: 
+        connection = create_connection()
+        cursor = connection.cursor()
+
+        query_status = True
+        try: 
+            cursor.execute(view)
+            cursor.execute(query)
+        except:
+            query_status = False
+
+        if query_status:
+            is_success = True
+        else:
+            is_success = False
+
+        results = cursor.fetchall()
+        print ""    
+        for row in results:
+            print row
+        print "" 
+
+    except pymysql.Error as e:
+        is_success = False
+        print "Query failed: " + e.strerror
+
+    return is_success

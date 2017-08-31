@@ -1,0 +1,6 @@
+The changes that were made to the Lab1 folder were as followed:
+
+-We updated our logical and conecptual model so that the one-to-many relationships reflected in the Animal_Range were reversed. So that Continent and Endangered_Animal can have MANY Animal_Ranges.
+
+-Changed the create tables SQL script. Removed the Drop table statements, and deleted the Mammal table, and adjusted the data dictionary, script, and logical/conceptual model accordingly.
+
